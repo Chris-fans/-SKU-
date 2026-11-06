@@ -215,8 +215,6 @@ export default function CreateOrderModal({
     setSelectedFourthFilter('全部');
   };
 
-  if (!isOpen) return null;
-
   // Toggle SKU selection
   const toggleSKU = (sku: SKU) => {
     if (selectedSKUIds.includes(sku.id)) {
@@ -435,6 +433,8 @@ export default function CreateOrderModal({
       )
     );
   }, [currentSecondCategory, effectiveThirdCategory]);
+
+  if (!isOpen) return null;
 
   return (
     <>
